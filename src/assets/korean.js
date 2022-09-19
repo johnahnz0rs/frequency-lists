@@ -3548,3 +3548,5 @@ const korean_list = {
     english: "Stretch, extend away",
   },
 };
+
+console.log(korean_list);
