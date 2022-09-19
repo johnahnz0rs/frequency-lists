@@ -1,21 +1,22 @@
 <!-- eslint-disable prettier/prettier -->
 <template>
   <div id="homepage">
-    <h1>Ktown's Killa VoKab</h1>
-    <p>
-      a "frequency list" is like a dictionary, but instead of alphabetically,
-      the words are ordered by how "frequently" they are used.
-    </p>
-    <p>
-      the top 1,000-5,000 words give you access to 75-90% of the language. pretty darned good.
-    </p>
-    <p>
-      use these flashcards to help you learn you some vocabulary to make your world a better place.<br />pick a language below
-    </p>
-  </div>
-  <div>
-    <router-link to="/korean" class="card">Korean</router-link>
-    <router-link to="/spanish" class="card">Spanish</router-link>
+    <div id="info">
+      <h1>Ktown Killa VoKab</h1>
+      <p>
+        a "frequency list" is like a dictionary, but the words are ordered by how "frequently" they are used in that language.
+      </p>
+      <p>
+        the top 1,000 words give you access to >70% of the language. pretty darned good.
+      </p>
+      <p>
+        use these flashcards to help you learn you some vocabulary and make <em>your</em> world a better place.<br />pick a language below
+      </p>
+    </div>
+    <div id="links">
+      <router-link to="/korean" class="card">Korean</router-link>
+      <router-link to="/spanish" class="card">Spanish</router-link>
+    </div>
   </div>
 </template>
 
@@ -27,12 +28,18 @@ export default {
 
 <style scoped>
 #homepage {
-  text-align: center;
+  /* text-align: center; */
 }
 p {
   max-width: 420px;
   margin-left: auto;
   margin-right: auto;
+}
+#info {
+  margin: 0 12px;
+}
+#info h1 {
+  text-align: center;
 }
 .card {
   display: block;
@@ -41,5 +48,8 @@ p {
   width: 360px;
   margin: 32px auto;
   padding: 42px 0;
+}
+a.card {
+  color: green;
 }
 </style>

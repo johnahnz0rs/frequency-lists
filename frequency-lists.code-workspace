@@ -14,7 +14,7 @@
 				"savePath": "~/../"
 			}
 		],
-		"liveSassCompile.settings.generateMap": true,
+		"liveSassCompile.settings.generateMap": false,
 		"liveSassCompile.settings.autoprefix": [
 			"last 2 versions",
 			"> 0.5%",
