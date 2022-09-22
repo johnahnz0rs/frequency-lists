@@ -36,7 +36,7 @@ p {
   margin-right: auto;
 }
 #info {
-  margin: 0 12px;
+  padding: 0 12px;
 }
 #info h1 {
   text-align: center;
