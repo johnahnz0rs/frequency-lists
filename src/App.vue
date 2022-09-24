@@ -19,3 +19,9 @@ export default {
   }),
 };
 </script>
+<style>
+body {
+  max-width: 400px;
+  margin: 0 auto;
+}
+</style>

@@ -18,7 +18,7 @@
       </div>
     </div>
     <div id="prev-next">
-      <p id="previous" @click="seePrevWord">see previous</p>
+      <p id="previous" @click="seePrevWord">previous</p>
       <p id="next" @click="getRandomWord">next word</p>
     </div>
     <!-- <div>
@@ -100,6 +100,9 @@ export default {
   text-align: center;
   font-size: 32px;
 }
+.card-back p {
+  font-size: 28px;
+}
 .flip {
   text-align: right;
   width: 50%;
@@ -115,10 +118,15 @@ export default {
 }
 #prev-next p {
   display: inline-block;
-  margin: 120px 32px 0 32px;
   padding: 8px 0;
   border: 1px solid black;
   text-align: center;
   width: 30%;
+}
+#prev-next #previous {
+  margin: 120px 32px 0 0;
+}
+#prev-next #next {
+  margin: 120px 0 0 32px;
 }
 </style>
