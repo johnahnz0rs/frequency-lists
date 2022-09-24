@@ -16,14 +16,9 @@
           flip card<br /><span class="small">show korean</span>
         </div>
       </div>
-      <!-- <div id="actions">
-        <span id="flip" @click="flipCard">flip</span>
-      </div> -->
-      <!-- <div class="card" v-for="word in korean_list" :key="word.frequency">
-        <p>{{ word }}</p>
-      </div> -->
     </div>
-    <div>
+    <div id="prev-next">
+      <p id="previous" @click="seePrevWord">see previous</p>
       <p id="next" @click="getRandomWord">next word</p>
     </div>
   </div>
@@ -51,6 +46,9 @@ export default {
     },
     flipCard() {
       this.showFront = !this.showFront;
+    },
+    seePrevWord() {
+      console.log("see previous word");
     },
   },
   created() {
@@ -86,9 +84,14 @@ export default {
 .small {
   font-size: 70%;
 }
-#next {
+/* #next { */
+#prev-next {
+  text-align: center;
+}
+#prev-next p {
   /* margin-top: 120px; */
-  margin: 120px auto 0 auto;
+  display: inline-block;
+  margin: 120px 32px 0 32px;
   padding: 8px 0;
   border: 1px solid black;
   text-align: center;

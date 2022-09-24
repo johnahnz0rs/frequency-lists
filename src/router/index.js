@@ -3,6 +3,8 @@ import HomePage from "../pages/HomePage.vue";
 import KoreanPage from "../pages/KoreanPage.vue";
 import SpanishPage from "../pages/SpanishPage.vue";
 
+// import SomePage from "../pages/SomePage.vue"
+
 const routes = [
   {
     path: "/",
@@ -20,14 +22,9 @@ const routes = [
     component: SpanishPage,
   },
   // {
-  //   path: "/about",
-  //   name: "about",
-  //   // route level code-splitting
-  //   // this generates a separate chunk (about.[hash].js) for this route
-  //   // which is lazy-loaded when the route is visited.
-  //   component: function () {
-  //     return import(/* webpackChunkName: "about" */ "../views/AboutView.vue");
-  //   },
+  //   path: "",
+  //   name: "",
+  //   component: SomePage,
   // },
 ];
 
