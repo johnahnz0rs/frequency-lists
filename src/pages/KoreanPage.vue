@@ -80,6 +80,9 @@ export default {
 </script>
 
 <style scoped>
+#korean-page {
+  margin: 0 8px;
+}
 .test {
   border: 1px solid black;
   padding: 8px;

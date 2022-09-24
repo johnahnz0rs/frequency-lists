@@ -79,6 +79,9 @@ export default {
 </script>
 
 <style scoped>
+#spanish-page {
+  margin: 0 8px;
+}
 .test {
   border: 1px solid black;
   padding: 8px;
