@@ -1,5 +1,6 @@
 import { createStore } from "vuex";
-import koreanModule from "./modules/korean/index.js";
+import KoreanModule from "./modules/korean/index.js";
+import SpanishModule from "./modules/spanish/index.js";
 
 export default createStore({
   state: {},
@@ -7,6 +8,7 @@ export default createStore({
   mutations: {},
   actions: {},
   modules: {
-    korean: koreanModule,
+    korean: KoreanModule,
+    spanish: SpanishModule,
   },
 });

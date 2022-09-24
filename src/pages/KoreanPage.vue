@@ -4,14 +4,14 @@
       <h1>Korean</h1>
     </div>
     <div id="flashcard">
-      <div v-if="showFront" class="card card-front" :id="randomWord.frequency">
-        <p>{{ randomWord.korean }}</p>
+      <div v-if="showFront" class="card card-front" :id="wordToShow.frequency">
+        <p>{{ wordToShow.korean }}</p>
         <div class="flip" @click="flipCard">
           flip card<br /><span class="small">show english</span>
         </div>
       </div>
-      <div v-else class="card card-back" :id="randomWord.frequency">
-        <p>{{ randomWord.english }}</p>
+      <div v-else class="card card-back" :id="wordToShow.frequency">
+        <p>{{ wordToShow.english }}</p>
         <div class="flip" @click="flipCard">
           flip card<br /><span class="small">show korean</span>
         </div>
@@ -21,6 +21,10 @@
       <p id="previous" @click="seePrevWord">see previous</p>
       <p id="next" @click="getRandomWord">next word</p>
     </div>
+    <!-- <div>
+      <p class="test" @click="printWordHistory">print wordHistory</p>
+      <p class="test" @click="printHistoryIndex">print historyIndex</p>
+    </div> -->
   </div>
 </template>
 <script>
@@ -28,7 +32,8 @@ export default {
   name: "KoreanPage",
   data() {
     return {
-      randomWord: {},
+      wordHistory: [],
+      historyIndex: 0,
       showFront: true,
     };
   },
@@ -36,36 +41,54 @@ export default {
     korean_list() {
       return this.$store.getters["korean_list"];
     },
+    wordToShow() {
+      return this.wordHistory[this.historyIndex];
+    },
   },
   methods: {
     getRandomWord() {
-      const randomIndex = Math.floor(Math.random() * 2000);
-      this.randomWord = this.korean_list[randomIndex];
+      // pick a new word
+      const randomKey = Math.floor(Math.random() * 2000);
+      const randomWord = this.korean_list[randomKey];
+      console.log(randomWord);
+      // update wordHistory & historyIndex
+      this.wordHistory.push(randomWord);
+      this.historyIndex = this.wordHistory.length - 1;
+      // flip card to front
       this.showFront = true;
-      console.log(this.randomWord);
     },
     flipCard() {
       this.showFront = !this.showFront;
     },
     seePrevWord() {
       console.log("see previous word");
+      this.showFront = true;
+      this.historyIndex -= 1;
     },
+    // printWordHistory() {
+    //   console.log(this.wordHistory);
+    // },
+    // printHistoryIndex() {
+    //   console.log(this.historyIndex);
+    // },
   },
   created() {
+    // this.historyIndex = -1;
     this.getRandomWord();
   },
 };
 </script>
 
 <style scoped>
-#korean-page {
-  /* text-align: center; */
+.test {
+  border: 1px solid black;
+  padding: 8px;
+  margin: 8px;
 }
 #heading h1 {
   text-align: center;
 }
 .card {
-  /* text-align: center; */
   padding: 24px 12px;
   border: 1px solid black;
 }
@@ -74,7 +97,6 @@ export default {
   font-size: 32px;
 }
 .flip {
-  /* font-size: 12px; */
   text-align: right;
   width: 50%;
   margin-left: auto;
@@ -84,12 +106,10 @@ export default {
 .small {
   font-size: 70%;
 }
-/* #next { */
 #prev-next {
   text-align: center;
 }
 #prev-next p {
-  /* margin-top: 120px; */
   display: inline-block;
   margin: 120px 32px 0 32px;
   padding: 8px 0;
