@@ -41,6 +41,9 @@ p {
 #info h1 {
   text-align: center;
 }
+#info p {
+  margin-bottom: 12px;
+}
 .card {
   display: block;
   text-align: center;
