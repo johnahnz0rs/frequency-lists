@@ -63,7 +63,9 @@ export default {
     seePrevWord() {
       console.log("see previous word");
       this.showFront = true;
-      this.historyIndex -= 1;
+      if (this.historyIndex > 0) {
+        this.historyIndex -= 1;
+      }
     },
     // printWordHistory() {
     //   console.log(this.wordHistory);
